@@ -1,6 +1,6 @@
 
-# use node latest image
-FROM node:latest
+# use nginx latest image
+FROM nginx:latest
 
 # set maintainer
 LABEL maintainer "abhiram.annangi@oracle.com"
@@ -11,5 +11,5 @@ HEALTHCHECK --interval=5s \
             CMD curl -f http://127.0.0.1:8000 || exit 1
 
 # Instruct docker what port to expose
-EXPOSE 8001
+EXPOSE 8080
 
