@@ -28,7 +28,7 @@ pipeline {
         steps {
             sh "sudo docker login -u 'REGISTRY USERNAME' -p 'REGISTRY PASSWORD' iad.ocir.io"
             sh "sudo docker tag customnginx:1 iad.ocir.io/OCI_TENANCY/nginx:custom"
-            sh 'sudo docker push iad.ocir.io/OCI_TENANCY/node:custom'
+            sh 'sudo docker push iad.ocir.io/OCI_TENANCY/nginx:custom'
             
            }
          }      
