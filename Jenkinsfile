@@ -5,7 +5,7 @@ pipeline {
         /* This stage pulls the latest nginx image from
            Dockerhub */
             steps {
-                sh 'docker pull nginx:latest'
+                sh 'sudo docker pull nginx:latest'
           }
         }
         stage('Build docker image') {
