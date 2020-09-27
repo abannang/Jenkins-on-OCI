@@ -1,4 +1,5 @@
 pipeline {
+    agent any
     stages {
         stage('Fetch dependencies') {
         /* This stage pulls the latest nginx image from
