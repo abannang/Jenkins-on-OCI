@@ -26,7 +26,7 @@ pipeline {
          /* Final stage of build; Push the 
             docker image to our OCI private Registry*/
         steps {
-             oci os object put -ns idp340vrk4m9 -bn bucket-20200924-1359 --file ~/nginx
+            sh 'oci os object put -ns idp340vrk4m9 -bn bucket-20200924-1359 --file ~/nginx'
             
            }
          }      
