@@ -27,7 +27,7 @@ pipeline {
             docker image to our OCI private Registry*/
         steps {
             /* sh 'chmod +x /home/opc/bin/oci' */
-            sh 'sudo /home/opc/bin/oci os object put -ns idp340vrk4m9 -bn bucket-20200924-1359 --file ~/nginx'
+            sh 'sudo /home/opc/bin/oci os object put -ns idp340vrk4m9 -bn bucket-20200924-1359 --file /home/opc/nginx'
             
            }
          }      
