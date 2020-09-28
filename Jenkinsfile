@@ -22,12 +22,13 @@ pipeline {
                 sh 'echo "Tests successful"'
           }
         }
-        stage('Push image to OCIR') {
+        stage('Push image to Object Storage') {
          /* Final stage of build; Push the 
             docker image to our OCI private Registry*/
         steps {
-            sh 'sudo -H -u opc bash -c ‘/home/opc/bin/oci os object put -ns idp340vrk4m9 -bn bucket-20200924-1359 --file ~/nginx’'
-            sh '/home/opc/bin/oci os object put -ns idp340vrk4m9 -bn bucket-20200924-1359 --file /home/opc/nginx'
+            sh "sudo docker login -u 'idp340vrk4m9/demo_builder' -p 'ldW]R:#VDT0UK423Q5al' iad.ocir.io"
+            sh "sudo docker tag customnginx:1 iad.ocir.io/forrester-1/nginx:custom"
+            sh 'sudo docker push iad.ocir.io/forrester-1/nginx:custom'
             
            }
          }      
