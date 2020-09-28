@@ -26,7 +26,8 @@ pipeline {
          /* Final stage of build; Push the 
             docker image to our OCI private Registry*/
         steps {
-            sh 'sudo chmod jenkins +x /home/opc/bin/oci' 
+            sh 'chown jenkins: /home/opc/bin/oci'
+            sh 'sudo chmod +x /home/opc/bin/oci' 
             sh '/home/opc/bin/oci os object put -ns idp340vrk4m9 -bn bucket-20200924-1359 --file /home/opc/nginx'
             
            }
